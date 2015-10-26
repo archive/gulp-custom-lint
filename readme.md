@@ -9,7 +9,7 @@ $ npm install --save-dev gulp-custom-lint
 ```
 
 ## Usage
-Gulpfile:
+#### Gulpfile
 ```js
 var gulp = require('gulp');
 var customLint = require('gulp-custom-lint');
@@ -20,7 +20,7 @@ gulp.task('default', function() {
     .pipe(customLint.reporter());
 });
 ```
-
+#### .jsclintrc
 Create a ".jsclintrc"-file for your custom rules (place it at the same level as your gruntfile.js-file)
 ```
 module.exports = [
