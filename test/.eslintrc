@@ -1,0 +1,9 @@
+{
+  "extends": "../.eslintrc",
+
+  "rules": {
+    // describe in describe in describe...
+    "max-nested-callbacks": 0,
+    "max-params": [2, 4]
+  }
+}
