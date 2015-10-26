@@ -24,7 +24,7 @@ gulp.task('default', function() {
 ```
 #### .jsclintrc
 Create a ".jsclintrc"-file for your custom rules (place it at the same level as your gruntfile.js-file)
-```
+```js
 module.exports = [
   {
     regexp: /pattern/g,
@@ -63,7 +63,7 @@ gulp.task('default', function() {
 As seen above you can either use a regexp pattern or a custom function to validate content/files
 
 ### Regexp (regular expression) pattern
-```
+```js
 {
   regexp: /pattern/,
   message: 'Message to show on failures'
