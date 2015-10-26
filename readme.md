@@ -64,6 +64,7 @@ The custom function is called with content (as a string) and the original [vinyl
   },
   message: 'Message to show if the function returns failed === true'
 }
+```
 
 #### Signature:
 ```function (content, file)```
