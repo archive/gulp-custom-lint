@@ -23,7 +23,8 @@ gulp.task('lint', function() {
     paths.thisFile,
     paths.scripts,
     paths.examples,
-    paths.tests
+    paths.tests,
+    '**/.jsclintrc'
   ])
   .pipe(eslint())
   .pipe(eslint.format())

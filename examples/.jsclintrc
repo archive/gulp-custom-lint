@@ -1,15 +1,15 @@
 module.exports = [
   {
     regexp: /toffee/g,
-    message: "You are not allowed to have toffee in the txt-files"
+    message: 'You are not allowed to have toffee in the txt-files'
   },
   {
-    func: function (content, file) {
+    func: function(content, file) {
       return {
-        failed: content.length > 150,
+        failed: file && content.length > 150,
         indexes: [1]
-      }
+      };
     },
-    message: "The content must not be greater than 150"
+    message: 'The content must not be greater than 150'
   }
 ];
