@@ -1,6 +1,6 @@
 {
   "name": "gulp-custom-lint",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Gulp plugin for custom lint rules/ocd checks via regexp patterns or custom functions",
   "main": "dist/index.js",
   "files": [
