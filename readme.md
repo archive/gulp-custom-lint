@@ -70,10 +70,10 @@ The custom function is called with content (as a string) and the original [vinyl
 ```function (content, file)```
 
 #### Contract for return object:
-failed (bool, mandatory)
+failed (bool, mandatory)  
 True or false
 
-indexes (array, optional)
+indexes (array, optional)  
 The indexes where the problems were found.
 
 ## .jsclintrc or rules object
