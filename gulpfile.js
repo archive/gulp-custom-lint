@@ -1,3 +1,4 @@
+/*eslint no-console: 0*/
 'use strict';
 
 var gulp = require('gulp');
@@ -5,6 +6,8 @@ var eslint = require('gulp-eslint');
 var mocha = require('gulp-mocha');
 var header = require('gulp-header');
 var babel = require('gulp-babel');
+var execSync = require('child_process').execSync;
+var gutil = require('gulp-util');
 
 var paths = {
   scripts: 'src/**/*.js',
@@ -19,16 +22,17 @@ gulp.task('test', function() {
 });
 
 gulp.task('lint', function() {
-  return gulp.src([
-    paths.thisFile,
-    paths.scripts,
-    paths.examples,
-    paths.tests,
-    '**/.jsclintrc'
-  ])
-  .pipe(eslint())
-  .pipe(eslint.format())
-  .pipe(eslint.failAfterError());
+  return gulp.src(
+    [
+      paths.thisFile,
+      paths.scripts,
+      paths.examples,
+      paths.tests,
+      '**/.jsclintrc'
+    ])
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError());
 });
 
 gulp.task('babel', function() {
@@ -38,5 +42,17 @@ gulp.task('babel', function() {
     .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('default', ['test', 'lint', 'babel'], function() {
+var run = function(cmd) {
+  gutil.log('Running:', cmd);
+  var output = execSync(cmd);
+  gutil.log(output.toString());
+};
+
+gulp.task('publish', ['dist'], function() {
+  run('npm version patch');
+  run('npm publish');
 });
+
+gulp.task('dist', ['test', 'lint', 'babel']);
+
+gulp.task('default', ['dist']);
