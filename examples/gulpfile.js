@@ -1,26 +1,21 @@
 'use strict';
 
 var gulp = require('gulp');
-
-// var customLint = require('gulp-custom-lint');
 var customLint = require('../src/index');
+// var customLint = require('gulp-custom-lint');
 
-var sourcePaths = {
-  txt: './data/*.txt'
-};
-
-gulp.task('customLintRulesFile', function() {
-  return gulp.src(sourcePaths.txt)
+gulp.task('default', function() {
+  return gulp.src('./code/*.*')
     .pipe(customLint())
     .pipe(customLint.reporter());
 });
 
-gulp.task('customLintRulesObject', function() {
-  return gulp.src(sourcePaths.txt)
+gulp.task('default2', function() {
+  return gulp.src('./code/*.*')
     .pipe(customLint([
       {
-        regexp: /marzipan/g,
-        message: 'You are not allowed to have marzipan in the txt'
+        regexp: /[0-9]px/g,
+        message: 'Use rem units instead of pixels'
       }
     ]))
     .pipe(customLint.reporter());

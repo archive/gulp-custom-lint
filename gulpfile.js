@@ -12,7 +12,7 @@ var gutil = require('gulp-util');
 var paths = {
   scripts: 'src/**/*.js',
   tests: 'test/**/*.js',
-  examples: 'examples/**/*.js',
+  examples: 'examples/*.js',
   thisFile: 'gulpfile.js'
 };
 

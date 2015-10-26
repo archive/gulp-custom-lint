@@ -1,15 +1,20 @@
 module.exports = [
   {
-    regexp: /toffee/g,
-    message: 'You are not allowed to have toffee in the txt-files'
+    regexp: /z-index: [0-9]/g,
+    message: 'Use z-index value from constants file'
+  },
+  {
+    regexp: /debugger;/g,
+    message: 'Remove debugger from js file',
+    ignore: [/test\-logger/]
   },
   {
     func: function(content, file) {
       return {
-        failed: file && content.length > 150,
+        failed: file.path.indexOf('_') !== -1,
         indexes: [1]
       };
     },
-    message: 'The content must not be greater than 150'
+    message: 'Use "-" instead of "_" in file names'
   }
 ];
