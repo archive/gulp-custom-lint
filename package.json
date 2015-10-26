@@ -27,7 +27,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "github.com/archive/gulp-custom-lint"
+    "url": "https://github.com/archive/gulp-custom-lint"
+  },
+  "bugs": {
+    "url": "https://github.com/archive/gulp-custom-lint/issues"
   },
   "author": {
     "name": "Anders Jönsson",
