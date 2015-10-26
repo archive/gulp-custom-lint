@@ -2,6 +2,8 @@
 
 Use regexp or custom functions to create your own custom lint rules or ocd checks (gulp plugin)
 
+![screenshot](/examples/screen.png?raw=true "screenshot")
+
 ## Install
 
 ```
